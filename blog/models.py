@@ -1,0 +1,18 @@
+from django.db import models
+
+# Create your models here.
+
+class BlogPost(models.Model):
+    post_id = models.AutoField(primary_key=True)
+    title = models.CharField(max_length=100)
+    head0 = models.CharField(max_length=200, default="")
+    desc0 = models.CharField(max_length=2000, default="")
+    head1 = models.CharField(max_length=200, default="")
+    desc1 = models.CharField(max_length=2000, default="")
+    head2 = models.CharField(max_length=200, default="")
+    desc2 = models.CharField(max_length=2000, default="")
+    pub_date = models.DateField()
+    thumbnail = models.ImageField(upload_to="shop/images", default="")
+
+    def __str__(self):
+        return self.title
